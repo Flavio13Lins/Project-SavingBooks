@@ -8,7 +8,7 @@ public class Emprestimo {
 	private LocalDate dataEmprestimo;
 	private LocalDate dataDevolucao;
 	private String pessoa;
-	private int livroId;
+	private Livro livro;
 	
 	/**GETTERS E SETTERS**/
 	public int getId() {
@@ -39,26 +39,25 @@ public class Emprestimo {
 		this.pessoa = pessoa;
 	}
 	
-	public int getLivroId() {
-		return livroId;
+	public Livro getLivro() {
+		return livro;
 	}
-	public void setLivroId(int livroId) {
-		this.livroId = livroId;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
-	
 	/**CONSTRUTORES**/
 	public Emprestimo() {
 		super();
 	}
 	
-	public Emprestimo(int id, LocalDate dataEmprestimo, LocalDate dataDevolucao, String pessoa, int livroId) {
+	public Emprestimo(int id, LocalDate dataEmprestimo, LocalDate dataDevolucao, String pessoa, Livro livro) {
 		super();
 		this.id = id;
 		this.dataEmprestimo = dataEmprestimo;
 		this.dataDevolucao = dataDevolucao;
 		this.pessoa = pessoa;
-		this.livroId = livroId;
-	}
+		this.livro = livro;
+	}	
 	
 	
 }
