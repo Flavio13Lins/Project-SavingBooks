@@ -6,7 +6,7 @@ import model.Usuario;
 public class Sistema {
 
 	public void cadastrarUsuario(Usuario usuario){
-		System.out.println("Usuário cadastrado: " + usuario.getEmail());
+		System.out.println("Usuario cadastrado: " + usuario.getEmail());
 	}
 	
 	public boolean efetuarLogin(String nickname, String senha){
