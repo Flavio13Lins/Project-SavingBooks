@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Executou!!
+Executou!! <br/>
+<a href="abrirIndex">Voltar ao index</a>
 </body>
 </html>

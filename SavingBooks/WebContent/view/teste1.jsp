@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="chamarTest1">Testando ... </a>
-<form action="chamarTest1">
-<button type="submit">Send</button>
-</form>
+<a href="chamarTest2">Testando ... </a>
 
 </body>
 </html>
