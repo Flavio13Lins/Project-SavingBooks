@@ -101,11 +101,26 @@
             
                 <thead>
                     <tr class="filters">
-                        <th><input type="text" class="form-control" placeholder="+" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Already Read" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Lent To" disabled></th>
-						<th><input type="text" class="form-control" placeholder="Grade" disabled></th>
+                        <th><input type="submit" value="Add this Book" name="submit" class="txt2"></th>
+                        <th><input type="text" class="form-control" placeholder="Name" abled></th>
+                        <th><div class="form-group">
+							  <label for="sel1">Already Read:</label>
+							  <select class="form-control" id="sel1">
+							    <option>Yes</option>
+							    <option>No</option>
+							  </select>
+							</div></th></th>
+                        <th><input type="text" class="form-control" placeholder="Lent To" abled></th>
+						<th><div class="form-group">
+							  <label for="sel1">Grade:</label>
+							  <select class="form-control" id="sel1">
+							    <option>1</option>
+							    <option>2</option>
+							    <option>3</option>
+							    <option>4</option>
+							    <option>5</option>
+							  </select>
+							</div></th>
                     </tr>
                 </thead>
                 <tbody>
