@@ -109,23 +109,25 @@
 									<th><input type="text" class="form-control" name="autor"
 										placeholder="Autor" abled></th>
 									<th><div class="form-group">
-											<label for="sel1">Already Read:</label> <select
-												class="form-control" id="sel1">
-												<option>Yes</option>
-												<option>No</option>
+											<label >Already Read:</label> 
+											<select	name="lido" class="form-control" >
+												<option value=1 >Yes</option>
+												<option value=0 >No</option>
 											</select>
 										</div></th>
 									</th>
-									<th><input type="text" class="form-control"
-										placeholder="Lent To" abled></th>
+									
+									<!-- LIVROS EMPRESTADOR NOME DA VARIAVEL PRA GUARDAR VALOR -->
+									
+									<input name="" type="text" class="form-control" placeholder="Lent To" abled>
 									<th><div class="form-group">
-											<label for="sel1">Grade:</label> <select class="form-control"
-												id="sel1">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+											<label for="sel1">Grade:</label> 
+											<select name="nota" class="form-control">
+												<option value=1 >1</option>
+												<option value=2 >2</option>
+												<option value=3 >3</option>
+												<option value=4 >4</option>
+												<option value=5 >5</option>
 											</select>
 									</div></th>
 							</form>

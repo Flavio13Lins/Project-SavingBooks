@@ -77,21 +77,10 @@
       <p><a href="#">Link</a></p>
     </div>
     
-	
-	<!--
-	<div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-    </div>
-	-->
-	
 	<div class="col-sm-4 text-center">
         <div class="main-login main-center">
 		<h3>LOGIN</h3>
-			<form class="" method="post" action="#">	
+			<form action="abrirLogUsuario" method="get" id="form1">	
 			<div class="form-group">						
 				<label for="nickname" class="cols-sm-2 control-label">Nickname</label>
 					<div class="cols-sm-10">
@@ -104,27 +93,32 @@
 
 				<div class="form-group">
 					<label for="password" class="cols-sm-2 control-label">Password</label>
-					<div class="cols-sm-10">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-							<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+								<input type="password" class="form-control" name="senha" id="password"  placeholder="Enter your Password"/>
+							</div>
 						</div>
 					</div>
-				</div>
 				<div class="login-help">
-					<a href="#">Forgot Password...</a>
-				 </div>
-				<div class="form-group ">
-					<a href="abrirCadBook" target="_blank" type="button" id="button" class="btn btn-default btn-lg btn-block login-button">Login</a>
+					<a href="chamarTest2">Forgot Password...</a>
 				</div>
+				
+				<div class="form-group ">
+					<button name="submit" type="submit" form="form1" class="btn btn-default btn-lg btn-block login-button">Login</button>
+				</div>
+				
 			</form>
+		
+			
+		
 		</div>
     </div>
 	
     <div class="col-sm-4 text-center">
         <div class="main-login main-center">
 		<h3>NEW REGISTER</h3>
-			<form class="" method="post" action="#">	
+			<form id="form2" method="post" action="abrirCadUsuario">	
 			<div class="form-group">						
 				<label for="nickname" class="cols-sm-2 control-label">Nickname</label>
 					<div class="cols-sm-10">
@@ -149,11 +143,12 @@
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-							<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+							<input type="password" class="form-control" name="senha" id="password"  placeholder="Enter your Password"/>
 						</div>
 					</div>
 				</div>
-
+				
+<!--NOME DA VARIAVEL PARA COMFIRMAÇAO DA SENHA?-->
 				<div class="form-group">
 					<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
 						<div class="cols-sm-10">							<div class="input-group">
@@ -163,10 +158,10 @@
 					</div>
 				</div>
 				<div class="login-help">
-					<a href="#">Help...</a>
+					<a href="chamarTest2">Help...</a>
 				 </div>
 				<div class="form-group ">
-					<a href="chamarTest2" target="_blank" type="button" id="button" class="btn btn-info btn-lg btn-block login-button">Create Account</a>
+					<button  name="submit" type="submit" form="form2" class="btn btn-info btn-lg btn-block login-button">Create Account</button>
 				</div>
 			</form>
 		</div>
