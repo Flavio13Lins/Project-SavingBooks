@@ -89,51 +89,58 @@
     <div class="col-sm-8 text-center">
         <table class="table"><!--<div>...panel panel-primaryfilterable // tab-content // panel fluid // panel-title-->
             
-			<div class="table-title">
-                <h3 class="table-title">Your Personal Libary</h3>
+			<!-- <div class="table-title"> -->
+                <h2 class="table-title">Add a Book in your Libary</h2>
+                <!--  
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div>
-                <hr size="pixels">
-            </div>
+                -->
+                <!-- <hr size="pixels"> -->
+            <!-- </div> -->
 			
-            <table class="table">
+            <!-- <table class="table">  -->
             
                 <thead >
-                    <tr class="filters" >
+                    <!-- <tr class="filters" > -->
                     	<form action="adicionarLivro">
-									<th><input type="submit" value="Add this Book"
-										name="submit" class="txt2"></th>
-									<th><input type="text" class="form-control" name="nome"
-										placeholder="Name" abled></th>
-									<th><input type="text" class="form-control" name="autor"
-										placeholder="Autor" abled></th>
-									<th><div class="form-group">
-											<label >Already Read:</label> 
-											<select	name="lido" class="form-control" >
-												<option value=1 >Yes</option>
-												<option value=0 >No</option>
-											</select>
-										</div></th>
-									</th>
-									
-									<!-- LIVROS EMPRESTADOR NOME DA VARIAVEL PRA GUARDAR VALOR -->
-									
-									<input name="" type="text" class="form-control" placeholder="Lent To" abled>
-									<th><div class="form-group">
-											<label for="sel1">Grade:</label> 
-											<select name="nota" class="form-control">
-												<option value=1 >1</option>
-												<option value=2 >2</option>
-												<option value=3 >3</option>
-												<option value=4 >4</option>
-												<option value=5 >5</option>
-											</select>
-									</div></th>
-							</form>
+							<th><input type="submit" value="Add this Book" name="submit" class="txt2"></th>
+							
+							<th><input type="text" class="form-control" name="nome" placeholder="Name"></th>
+							
+							<th><input type="text" class="form-control" name="autor" placeholder="Autor" ></th>
+							
+							<th><div class="form-group">
+								<select	name="lido" class="form-control" >
+									<option disabled>Already Read?</option>
+									<option value=1 >Yes</option>
+									<option value=0 >No</option>
+								</select>
+								</div>
+							</th>
+							
+							<!-- LIVROS EMPRESTADOR NOME DA VARIAVEL PRA GUARDAR VALOR -->
+							<th>
+								<input name="" type="text" class="form-control" placeholder="Lent To">
+							</th>
+							
+							<th><div class="form-group">
+									<select name="nota" class="form-control">
+										<option disabled>Grade</option>
+										<option value=1 >1</option>
+										<option value=2 >2</option>
+										<option value=3 >3</option>
+										<option value=4 >4</option>
+										<option value=5 >5</option>
+									</select>
+								</div>
+							</th>
+						</form>
                         
-                    </tr>
+                    <!-- </tr> -->
                 </thead>
+				<!--
+			
                 <tbody>
                     <tr>
                         <td>1</td>
@@ -157,7 +164,8 @@
 						<td>5</td>
                     </tr>
                 </tbody>
-            </table>
+                
+          		-->
         </table>
     </div>
 	
