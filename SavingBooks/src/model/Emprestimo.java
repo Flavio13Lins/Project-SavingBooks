@@ -2,12 +2,32 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//@Entity
+//@Table(name="TBEMPRESTIMO")
 public class Emprestimo {
 	/**ATRIBUTOS**/
+	//@Id
+    //@GeneratedValue
 	private int id;
+	
+	//@Temporal(TemporalType.DATE)
+	@Column(name = "emprestimo_inicio")
 	private LocalDate dataEmprestimo;
+	
+	//@Temporal(TemporalType.DATE)
+	//@Column(name = "emprestimo_fim")
 	private LocalDate dataDevolucao;
+	
+	//@Column(name = "emprestimo_nome_pessoa")
 	private String pessoa;
+
+	//dependencia
 	private Livro livro;
 	
 	/**GETTERS E SETTERS**/

@@ -1,9 +1,22 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBUSUARIO")
 public class Usuario {
 	/**ATRIBUTOS**/
+	@Id
+	@Column(name = "usuario_email", length=25, nullable = false)
 	private String email;
+	
+	@Column(name = "usuario_nick", length=15, nullable = false)
 	private String nickname;
+	
+	@Column(name = "usuario_senha", length=20, nullable = false)
 	private String senha;
 	
 	/**GETTERS E SETTERS**/

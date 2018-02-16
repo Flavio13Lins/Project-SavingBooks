@@ -2,14 +2,39 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="TBLIVRO")
 public class Livro {
 	/**ATRIBUTOS**/
+	@Id
+    @GeneratedValue
 	private int id;
+	
+	@Column(name = "livro_nome", nullable = false)
 	private String nome;
+	
+	@Column(name = "livro_autor", nullable = false)
 	private String autor;
+	
+	@Column(name = "livro_nota", nullable = false)
 	private int nota;
+	
+	//@Temporal(TemporalType.DATE)
+	@Column(name = "livro_cadastro")
 	private LocalDate dataCadastro;
+	
+	@Column(name = "livro_check")
 	private Boolean lido;
+
+	@Column(name = "usuario_email")
 	private String usuarioEmail;
 	
 	/**GETTERS E SETTERS**/
