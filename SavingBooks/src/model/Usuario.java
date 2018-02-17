@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class Usuario {
 	/**ATRIBUTOS**/
 	@Id
-	@Column(name = "usuario_email", length=25, nullable = false)
+	@Column(name = "usuario_email", length=25, nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "usuario_nick", length=15, nullable = false)
+	@Column(name = "usuario_nick", length=15, nullable = false, unique = true)
 	private String nickname;
 	
 	@Column(name = "usuario_senha", length=20, nullable = false)

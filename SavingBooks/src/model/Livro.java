@@ -1,10 +1,11 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -15,26 +16,26 @@ import javax.persistence.TemporalType;
 public class Livro {
 	/**ATRIBUTOS**/
 	@Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "livro_nome", nullable = false)
+	@Column(name = "livro_nome", length=35, nullable = false)
 	private String nome;
 	
-	@Column(name = "livro_autor", nullable = false)
+	@Column(name = "livro_autor", length=20, nullable = false)
 	private String autor;
 	
 	@Column(name = "livro_nota", nullable = false)
 	private int nota;
 	
-	//@Temporal(TemporalType.DATE)
-	@Column(name = "livro_cadastro")
-	private LocalDate dataCadastro;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "livro_cadastro", nullable = false)
+	private Date dataCadastro;
 	
-	@Column(name = "livro_check")
+	@Column(name = "livro_check", nullable = false)
 	private Boolean lido;
 
-	@Column(name = "usuario_email")
+	@Column(name = "usuario_email", length=25 , nullable = false)
 	private String usuarioEmail;
 	
 	/**GETTERS E SETTERS**/
@@ -66,10 +67,10 @@ public class Livro {
 		this.nota = nota;
 	}
 	
-	public LocalDate getDataCadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(LocalDate dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	
@@ -91,7 +92,7 @@ public class Livro {
 	public Livro() {
 		super();
 	}
-	public Livro(int id, String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, String usuarioEmail) {
+	public Livro(int id, String nome, String autor, int nota, Date dataCadastro, Boolean lido, String usuarioEmail) {
 		super();
 		this.id = id;//
 		this.nome = nome;
