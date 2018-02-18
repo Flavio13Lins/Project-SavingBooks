@@ -1,15 +1,12 @@
 package model;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="TBLIVRO")
@@ -28,9 +25,9 @@ public class Livro {
 	@Column(name = "livro_nota", nullable = false)
 	private int nota;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name = "livro_cadastro", nullable = false)
-	private Date dataCadastro;
+	private LocalDate dataCadastro;
 	
 	@Column(name = "livro_check", nullable = false)
 	private Boolean lido;
@@ -67,10 +64,10 @@ public class Livro {
 		this.nota = nota;
 	}
 	
-	public Date getDataCadastro() {
+	public LocalDate getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	
@@ -92,7 +89,18 @@ public class Livro {
 	public Livro() {
 		super();
 	}
-	public Livro(int id, String nome, String autor, int nota, Date dataCadastro, Boolean lido, String usuarioEmail) {
+	
+	public Livro(String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, String usuarioEmail) {
+		super();
+		this.nome = nome;
+		this.autor = autor;
+		this.nota = nota;
+		this.dataCadastro = dataCadastro;
+		this.lido = lido;
+		this.usuarioEmail = usuarioEmail;
+	}
+	
+	public Livro(int id, String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, String usuarioEmail) {
 		super();
 		this.id = id;//
 		this.nome = nome;

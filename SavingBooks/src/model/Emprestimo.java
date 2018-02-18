@@ -1,7 +1,6 @@
 package model;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="TBEMPRESTIMO")
@@ -21,19 +18,19 @@ public class Emprestimo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name = "emprestimo_inicio", nullable = false)
-	private Date dataEmprestimo;
+	private LocalDate dataEmprestimo;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name = "emprestimo_fim")
-	private Date dataDevolucao;
+	private LocalDate dataDevolucao;
 	
 	@Column(name = "emprestimo_nome_pessoa", length=15, nullable = false)
 	private String pessoa;
 
 	@ManyToOne
-	@JoinColumn(name = "livro_id", nullable = false, referencedColumnName="id")
+	@JoinColumn(name = "livro", nullable = false, referencedColumnName="id")
 	private Livro livro;
 	
 	/**GETTERS E SETTERS**/
@@ -44,17 +41,17 @@ public class Emprestimo {
 		this.id = id;
 	}
 	
-	public Date getDataEmprestimo() {
+	public LocalDate getDataEmprestimo() {
 		return dataEmprestimo;
 	}
-	public void setDataEmprestimo(Date dataEmprestimo) {
+	public void setDataEmprestimo(LocalDate dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 	
-	public Date getDataDevolucao() {
+	public LocalDate getDataDevolucao() {
 		return dataDevolucao;
 	}
-	public void setDataDevolucao(Date dataDevolucao) {
+	public void setDataDevolucao(LocalDate dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
 	
@@ -76,7 +73,15 @@ public class Emprestimo {
 		super();
 	}
 	
-	public Emprestimo(int id, Date dataEmprestimo, Date dataDevolucao, String pessoa, Livro livro) {
+	public Emprestimo(LocalDate dataEmprestimo, LocalDate dataDevolucao, String pessoa, Livro livro) {
+		super();
+		this.dataEmprestimo = dataEmprestimo;
+		this.dataDevolucao = dataDevolucao;
+		this.pessoa = pessoa;
+		this.livro = livro;
+	}
+	
+	public Emprestimo(int id, LocalDate dataEmprestimo, LocalDate dataDevolucao, String pessoa, Livro livro) {
 		super();
 		this.id = id;
 		this.dataEmprestimo = dataEmprestimo;
