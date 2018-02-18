@@ -62,6 +62,11 @@ public class Geratabelas {
 		LocalDate x = LocalDate.now(), y = LocalDate.of(1995, 2, 2);
 		Livro a2 = new Livro("livro2", "autor2", 3, x, false, "falsksaks@kadksdk.com");
 		System.out.println("criou livro a2 e datas");
+		b = sb.createEntityManager();
+		b.getTransaction().begin();
+		b.persist(a2);
+		b.getTransaction().commit();
+		System.out.println("persistindo livro");
 		Emprestimo c = new Emprestimo(y, x, "pessoacomlivro", a2);
 		System.out.println("criou emprestimo");
 		b = sb.createEntityManager();

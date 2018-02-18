@@ -23,7 +23,7 @@ public class Emprestimo {
 	private LocalDate dataEmprestimo;
 	
 	//@Temporal(TemporalType.DATE)
-	@Column(name = "emprestimo_fim")
+	@Column(name = "emprestimo_fim", nullable = true)
 	private LocalDate dataDevolucao;
 	
 	@Column(name = "emprestimo_nome_pessoa", length=15, nullable = false)
