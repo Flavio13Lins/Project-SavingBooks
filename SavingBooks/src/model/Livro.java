@@ -29,7 +29,7 @@ public class Livro {
 	@Column(name = "livro_cadastro", nullable = false)
 	private LocalDate dataCadastro;
 	
-	@Column(name = "livro_check", nullable = false)
+	@Column(name = "livro_lido", nullable = false)
 	private Boolean lido;
 
 	@Column(name = "usuario_email", length=25 , nullable = false)

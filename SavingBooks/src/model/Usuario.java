@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="TBUSUARIO")
+//@UniqueKey(columnsNames = {usuario_email, usuario_nick})
+//@UniqueConstraint (columnNames = {"usuario_nick", "usuario_email"})
 public class Usuario {
 	/**ATRIBUTOS**/
 	@Id
@@ -19,6 +21,9 @@ public class Usuario {
 	@Column(name = "usuario_senha", length=20, nullable = false)
 	private String senha;
 	
+	
+	//@UniqueConstraint(columnNames = {"usuario_nick", "usuario_email"})
+	//@Check(constraints )
 	/**GETTERS E SETTERS**/
 	public String getEmail() {
 		return email;
