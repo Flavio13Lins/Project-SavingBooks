@@ -68,11 +68,15 @@ public class Geratabelas {
         System.out.println("teste ok novoemprestimo 2 kto1");
         
         System.out.println("tentando consulta");
-        consultarUsuario("flaviolins@blabla.com");
+        consultarUsuario(1);
         System.out.println("feita consulta");
         
-        System.out.println("tentando alteraçao email");
-        alterarEmailUsuario("flaviolins@blabla.com", "novoemail");
+        System.out.println("tentando remover ");
+        removerUsuario(2);
+        System.out.println("feita remoçao");
+        
+        System.out.println("tentando alterar para emeile@... ");
+        alterarEmailUsuario(1, "emeile@blabal");
         System.out.println("feita alteraçao");
         
         sb.close();
@@ -168,14 +172,14 @@ public class Geratabelas {
 		System.out.println("fez persist no livro em nova lib");
 	}
 	
-	public static void consultarUsuario(String uemail) {
+	public static void consultarUsuario(int numb) {
 		System.out.println("consulta do usuario");
 		EntityManager b;
 		System.out.println("fez entity b");
 		b = sb.createEntityManager();
 		System.out.println("criando parametro");
-		Usuario u = b.find(Usuario.class, uemail);
-		System.out.println("pesquisa feita pelo "+ uemail);
+		Usuario u = b.find(Usuario.class, numb);
+		System.out.println("pesquisa feita pelo "+ numb);
 		if (u != null){
 			System.out.println(u.getNickname()+" "+u.getEmail()+" "+u.getSenha());	
 		} else {
@@ -184,14 +188,14 @@ public class Geratabelas {
 		b.close();
 	}
 	
-	public static void alterarEmailUsuario(String uemail, String novoemail) {
+	public static void alterarEmailUsuario(int numb, String novoemail) {
 		System.out.println("consulta do usuario");
 		EntityManager b;
 		System.out.println("fez entity b");
 		b = sb.createEntityManager();
 		System.out.println("criando parametro");
-		Usuario u = b.find(Usuario.class, uemail);
-		System.out.println("pesquisa feita pelo "+ uemail);
+		Usuario u = b.find(Usuario.class, numb);
+		System.out.println("pesquisa feita pelo "+ numb);
 		if (u != null){
 			System.out.println("ante-> "+u.getNickname()+" "+u.getEmail()+" "+u.getSenha());	
 		} else {
@@ -199,11 +203,14 @@ public class Geratabelas {
 		}
 		try {
 			//removendo antes de fazer merge
-			b.getTransaction().begin();
-			u = b.merge(u);
-			b.getTransaction().commit();
-			System.out.println("removido");
+			//b.getTransaction().begin();
+			//u = b.merge(u);
+			//b.getTransaction().commit();
+			//System.out.println("removido");
+			//String nick=u.getNickname(), senha=u.getSenha();
+			//Usuario x = new Usuario(novoemail, nick, senha);
 			u.setEmail(novoemail);//alterando email
+			
 			System.out.println("alterando agr-> "+u.getNickname()+" "+u.getEmail()+" "+u.getSenha());
 			b.getTransaction().begin();
 			// fazendo merge
@@ -219,13 +226,13 @@ public class Geratabelas {
 		}
 	}
 	
-	public static void removerUsuario(String email) {
+	public static void removerUsuario(int numb) {
 		try {
 			// Consultar objeto
 			EntityManager b;
 			System.out.println("fez entity b");
 			b = sb.createEntityManager();
-			Usuario u = b.find(Usuario.class, email);              
+			Usuario u = b.find(Usuario.class, numb);              
 			System.out.println("encontrado para remoçao agr-> "+u.getNickname()+" "+u.getEmail()+" "+u.getSenha());
 			// Remover objeto
 			b.getTransaction().begin();

@@ -2,6 +2,8 @@ package model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,6 +14,9 @@ import javax.persistence.Table;
 public class Usuario {
 	/**ATRIBUTOS**/
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
 	@Column(name = "usuario_email", length=25, nullable = false, unique = true)
 	private String email;
 	
@@ -25,9 +30,17 @@ public class Usuario {
 	//@UniqueConstraint(columnNames = {"usuario_nick", "usuario_email"})
 	//@Check(constraints )
 	/**GETTERS E SETTERS**/
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -48,8 +61,17 @@ public class Usuario {
 	public Usuario() {
 		super();
 	}
+	
 	public Usuario(String email, String nickname, String senha) {
 		super();
+		this.email = email;
+		this.nickname = nickname;
+		this.senha = senha;
+	}
+	
+	public Usuario(int id, String email, String nickname, String senha) {
+		super();
+		this.id = id;
 		this.email = email;
 		this.nickname = nickname;
 		this.senha = senha;
