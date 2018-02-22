@@ -2,6 +2,8 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import dao.UsuarioDAO;
 import model.Usuario;
 
 @Controller
@@ -9,8 +11,8 @@ public class UsuarioController {
 	
 	@RequestMapping("abrirCadUsuario")
 	public String CadUsuario(Usuario cadastro) {
-		System.out.println("Email cadastrando: " + cadastro.getEmail());
-		System.out.println(" senha logando: " + cadastro.getSenha());
+		UsuarioDAO testeDAO = new UsuarioDAO();
+		testeDAO.inserir(cadastro);
 		return "testeCadastroLivro";
 	}
 	
