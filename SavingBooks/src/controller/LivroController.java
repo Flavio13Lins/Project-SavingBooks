@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.LivroDAO;
 import model.Livro;
+import model.Usuario;
 
 @Controller
 public class LivroController {
@@ -14,11 +15,10 @@ public class LivroController {
 	@RequestMapping("adicionarLivro")
 	public String addLivro(Livro livro) {
 		LivroDAO testeDAO = new LivroDAO();
+		Usuario u = new Usuario();
 		livro.setDataCadastro(LocalDate.now());//data do cadastro do livro
-		livro.setUsuario(1);//chave estrangeira
+		livro.setUsuario(u);//chave estrangeira
 		testeDAO.inserir(livro);
-		//System.out.println("Titulo do livro: " + livro.getNome());
-		//System.out.println(" Already e nota: "+ livro.getLido() +" "+ livro.getNota());
 		return "testeCadastroLivro";
 	}
 }

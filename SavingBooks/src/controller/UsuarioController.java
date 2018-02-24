@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dao.UsuarioDAO;
+import dao.UsuarioDAO2;
 import model.Usuario;
 
 @Controller

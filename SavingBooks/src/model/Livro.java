@@ -33,7 +33,7 @@ public class Livro {
 	private Boolean lido;
 
 	@Column(name = "usuario", nullable = false)//MUDAR?
-	private int usuario;
+	private Usuario usuario;
 	
 	/**GETTERS E SETTERS**/
 	public int getId() {
@@ -78,11 +78,11 @@ public class Livro {
 		this.lido = lido;
 	}
 	
-	public int getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(int usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario i) {
+		this.usuario = i;
 	}
 
 	/**CONSTRUTORES**/
@@ -90,7 +90,7 @@ public class Livro {
 		super();
 	}
 	
-	public Livro(String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, int usuario) {
+	public Livro(String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, Usuario usuario) {
 		super();
 		this.nome = nome;
 		this.autor = autor;
@@ -100,7 +100,7 @@ public class Livro {
 		this.usuario = usuario;
 	}
 	
-	public Livro(int id, String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, int usuario) {
+	public Livro(int id, String nome, String autor, int nota, LocalDate dataCadastro, Boolean lido, Usuario usuario) {
 		super();
 		this.id = id;//
 		this.nome = nome;

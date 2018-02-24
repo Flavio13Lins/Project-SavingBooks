@@ -32,9 +32,9 @@ public class Geratabelas {
 				  datadps = LocalDate.of(2015, 10, numrand.nextInt(27)+1),
 				  datarand = LocalDate.of(2010, 10, numrand.nextInt(27)+1);
 		
-		Livro liv1 = new Livro("liv1", "eumsm", 2, datalea, true, usk.getId()),
-			  livdo1leu = new Livro("abc", "erasm", 4, datanasc, true, us1.getId()),
-			  livtl = new Livro("mero", "bobos \\n0", 9, datatual, true, usk.getId());
+		Livro liv1 = new Livro("liv1", "eumsm", 2, datalea, true, usk),
+			  livdo1leu = new Livro("abc", "erasm", 4, datanasc, true, us1),
+			  livtl = new Livro("mero", "bobos \\n0", 9, datatual, true, usk);
 		
 		Emprestimo emprestkto1 = new Emprestimo(datanasc, datatual, us1.getNickname(), liv1),
 				emprest1tok = new Emprestimo(datarand, datadps, usk.getNickname(), livdo1leu),
@@ -78,9 +78,9 @@ public class Geratabelas {
         removerUsuario(2);
         System.out.println("feita remoçao");
         
-        System.out.println("confirma1?  "+confirmacaoUsuarioTemLivro(2));
+        System.out.println("confirma1?  "+confirmacaoUsuarioTemLivro(usk));
         
-        System.out.println("conf 2  "+confirmacaoUsuarioTemLivro(1));
+        System.out.println("conf 2  "+confirmacaoUsuarioTemLivro(us1));
         /*
         System.out.println("tentando alterar para emeile@... ");
         alterarEmailUsuario(1, "emeile@blabal");
@@ -94,7 +94,7 @@ public class Geratabelas {
         removerLivro(2);
         System.out.println("feita remoçao");
         
-        System.out.println("conf 2  "+confirmacaoUsuarioTemLivro(2));
+        System.out.println("conf 2  "+confirmacaoUsuarioTemLivro(usk));
         /*
         System.out.println("??tentando consulta livro2");
         consultarLivro(2);
@@ -123,8 +123,9 @@ public class Geratabelas {
 		System.out.println("iniciou liv a");
 		EntityManager b;
 		System.out.println("fez entity b");
+		Usuario u = new Usuario();
 		LocalDate x = LocalDate.now();
-		Livro a1 = new Livro("livro1", "autor1", 4, x, false, 1);
+		Livro a1 = new Livro("livro1", "autor1", 4, x, false, u);
 		System.out.println("criou livro a1");
 		b = sb.createEntityManager();
 		b.getTransaction().begin();
@@ -136,9 +137,10 @@ public class Geratabelas {
 	public static void fazEmprestimoTesteqlqr() {
 		System.out.println("iniciou emp a");
 		EntityManager b;
+		Usuario u = new Usuario();
 		System.out.println("fez entity b");
 		LocalDate x = LocalDate.now(), y = LocalDate.of(1995, 2, 2);
-		Livro a2 = new Livro("livro2", "autor2", 3, x, false, 2);
+		Livro a2 = new Livro("livro2", "autor2", 3, x, false, u);
 		System.out.println("criou livro a2 e datas");
 		b = sb.createEntityManager();
 		b.getTransaction().begin();
@@ -182,7 +184,7 @@ public class Geratabelas {
 	
 	public static void persistirLivroDeUsuarioLib(Usuario u, Livro l) {
 		Livro novo = l;
-		novo.setUsuario(u.getId());
+		novo.setUsuario(u);
 		System.out.println("iniciou usu u com livro l");
 		EntityManager b;
 		System.out.println("fez entity b");
@@ -513,7 +515,7 @@ public class Geratabelas {
 		}
 	}
 	
-	public static void alterarDonoLivro(int id, int dono) {
+	public static void alterarDonoLivro(int id, Usuario dono) {
 		System.out.println("pesquisando livro para alterar");
 		EntityManager b;
 		System.out.println("fez entity b");
@@ -534,7 +536,7 @@ public class Geratabelas {
 			System.out.println("alterado agr-> "+livro.getNome()+
 					" | "+livro.getAutor()+" | "+livro.getNota()+
 					" | "+livro.getDataCadastro()+" | "+livro.getLido()+
-					" | "+livro.getUsuario());
+					" | ");
 			b.getTransaction().begin();
 			livro = b.merge(livro);// fazendo merge
 			b.getTransaction().commit();
@@ -582,7 +584,7 @@ public class Geratabelas {
 	}
 	
 	//Operaçoes de confirmação
-	public static boolean confirmacaoUsuarioTemLivro(int usuarioid) {
+	public static boolean confirmacaoUsuarioTemLivro(Usuario usuarioid) {
 		System.out.println("iniciando verificacao");//se usuario ainda tem livro
 		//ou seja se id do usuario esta na tabela livro
 		EntityManager conf;
