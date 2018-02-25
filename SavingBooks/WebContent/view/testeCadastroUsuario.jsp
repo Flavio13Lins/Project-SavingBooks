@@ -118,7 +118,7 @@
     <div class="col-sm-4 text-center">
         <div class="main-login main-center">
 		<h3>NEW REGISTER</h3>
-			<form id="form2" method="post" action="abrirCadUsuario">	
+			<form id="form2" method="post" action="criandoOb">	
 			<div class="form-group">						
 				<label for="nickname" class="cols-sm-2 control-label">Nickname</label>
 					<div class="cols-sm-10">
@@ -158,7 +158,7 @@
 					</div>
 				</div>
 				<div class="login-help">
-					<a href="chamarTest2">Help...</a>
+					<a href="listarUsers">Help...</a>
 				 </div>
 				<div class="form-group ">
 					<button  name="submit" type="submit" form="form2" class="btn btn-info btn-lg btn-block login-button">Create Account</button>

@@ -3,18 +3,42 @@ package controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import dao.UsuarioDAO;
-import dao.UsuarioDAO2;
+import dao.IUsuarioDAO;
 import model.Usuario;
+import dao.DAOFactory;
 
 @Controller
 public class UsuarioController {
 	
-	@RequestMapping("abrirCadUsuario")
+	@RequestMapping("cad-livro")
 	public String CadUsuario(Usuario cadastro) {
-		UsuarioDAO testeDAO = new UsuarioDAO();
+		IUsuarioDAO testeDAO = DAOFactory.getUsuarioDAO();
 		testeDAO.inserir(cadastro);
 		return "testeCadastroLivro";
+	}
+	
+	@RequestMapping("abrirCadUser")
+	public String abrirCadUser(){
+		System.out.println("Abrir Cadastrar Usuario");
+		return "testeCadastroUsuario";
+	}
+	
+	@RequestMapping("listarUsers")
+	public String listarUsers(){
+		System.out.println("Abrir lista de Usuarios");
+		return "listaUsuario";
+	}
+	
+	@RequestMapping("criandoOb")
+	public String CriandoOB(Usuario novousuario) {
+		IUsuarioDAO uDAO = DAOFactory.getUsuarioDAO();
+		uDAO.inserir(novousuario);
+		return "creatingobject";
+	}
+	
+	@RequestMapping("objetocriado")
+	public String ObjetoCriado() {
+		return "objectcreated";
 	}
 	
 	@RequestMapping("abrirLogUsuario")

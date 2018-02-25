@@ -24,11 +24,6 @@ public class TestController {
 		return "index";
 	}
 	
-	@RequestMapping("abrirCadUser")
-	public String abrirCadUser(){
-		System.out.println("Abrir Cadastrar Usuario");
-		return "testeCadastroUsuario";
-	}
 	
 	@RequestMapping("abrirCadBook")
 	public String abrirCadBook(){

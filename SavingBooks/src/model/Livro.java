@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,7 +34,8 @@ public class Livro {
 	@Column(name = "livro_lido", nullable = false)
 	private Boolean lido;
 
-	@Column(name = "usuario", nullable = false)//MUDAR?
+	@ManyToOne
+	@JoinColumn(name = "usuario", nullable = false)//MUDAR?
 	private Usuario usuario;
 	
 	/**GETTERS E SETTERS**/

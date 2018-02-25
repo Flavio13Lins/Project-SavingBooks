@@ -12,15 +12,18 @@
       <properties>
           <property name="javax.persistence.jdbc.driver" 
               		value="com.mysql.jdbc.Driver" />
+          <!-- jdbc:mysql://127.0.0.1/treinaweb_jse?autoReconnect=true&useSSL=false
           <property name="javax.persistence.jdbc.url" 
-              		value="jdbc:mysql://localhost:3306/savingbooks" />
+              		value="jdbc:mysql://localhost:3306/savingbooks" /> -->
+          <property name="javax.persistence.jdbc.url" 
+              		value="jdbc:mysql://localhost:3306/savingbooks?useSSL=false" />
           <property name="javax.persistence.jdbc.user" value="system" />
           <property name="javax.persistence.jdbc.password" value="root" />
       	  <property name="dialect" value="org.hibernate.dialect.MySQLDialect" />
 
           <property name="hibernate.show_sql" value="true" />
           <property name="hibernate.format_sql" value="true" />
-          <property name="hibernate.hbm2ddl.auto" value="update" />
+          <property name="hibernate.hbm2ddl.auto" value="create" />
       </properties>
   </persistence-unit>
  

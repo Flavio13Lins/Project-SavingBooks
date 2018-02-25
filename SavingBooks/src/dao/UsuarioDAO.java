@@ -1,16 +1,32 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import model.Usuario;
 
-public class UsuarioDAO {
+public class UsuarioDAO extends DAOGenerico<Usuario> implements IUsuarioDAO{
 	
-	public static EntityManagerFactory sb = Persistence.createEntityManagerFactory("SavingBooks.tables");
+	public UsuarioDAO(EntityManager em) {
+		super(em);
+	}
+	//public static EntityManagerFactory sb = Persistence.createEntityManagerFactory("SavingBooks.tables");
 	
-	public void inserir(Usuario usuario){
+	/*
+	public final void inserir(Entidade objeto) {
+        EntityTransaction tx = getEntityManager().getTransaction();     
+        try {
+            tx.begin();
+            getEntityManager().persist(objeto);
+            tx.commit();
+            System.out.println(classePersistente.getSimpleName() + " salvo com sucesso");
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (tx != null && tx.isActive()){
+                tx.rollback();
+            }
+        }
+    }
+	
+	public void inserirgenerico(Usuario usuario){
 		//Usuario novo = usuario;
 		System.out.println("iniciou persis usuario novo");
 		EntityManager b;
@@ -21,21 +37,8 @@ public class UsuarioDAO {
 		b.getTransaction().commit();
 		System.out.println("persist ok");
 	}
-	
-	public static void main(String[] args) {
-		EntityManagerFactory sb = Persistence.createEntityManagerFactory("SavingBooks.tables");
-		System.out.println("iniciou persis usuario novo");
-		EntityManager b;
-		b = sb.createEntityManager();
-		System.out.println("fez entity b");
-		Usuario usuarionovo = new Usuario("aaaa", "bbbb", "cccc");
-		System.out.println("fez usuario novo");
-		//DAOGenerico<Usuario> gg = UsuarioDAO2;
-		//UsuarioDAO um = new UsuarioDAO2(b);
-		System.out.println("fez usuariodao2");
-		//um.inserir(usuarionovo);
-		System.out.println("inserido");
-	}
+	*/
 	
 	
+
 }
