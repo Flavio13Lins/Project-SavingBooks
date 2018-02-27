@@ -7,8 +7,24 @@
 		<title>All User</title>
 	</head>
 	<body>
+		<h1>Exibir dados dos usuarios com MySql</h1>
 		
 		
+		<h2>Submitted Employee Information</h2>
+		<table>
+			<tr>
+				<td>Nickname :</td>
+				<td>${nickname}</td>
+			</tr>
+			<tr>
+				<td>Email :</td>
+				<td>${email}</td>
+			</tr>
+			<tr>
+				<td>Senha :</td>
+				<td>${senha}</td>
+			</tr>
+		</table>
 		
 	</body>
 </html>
