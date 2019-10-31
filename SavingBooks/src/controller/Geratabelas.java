@@ -39,7 +39,7 @@ public class Geratabelas {
 		Emprestimo emprestkto1 = new Emprestimo(datanasc, datatual, us1.getNickname(), liv1),
 				emprest1tok = new Emprestimo(datarand, datadps, usk.getNickname(), livdo1leu),
 				empresnovo = new Emprestimo(datalea, datatual, us2.getNickname(), liv1);
-		
+		// printa se validou as variaveis
 		System.out.println("variaveis ok");
 
         fazUsuarioTesteqlqr();
@@ -76,7 +76,7 @@ public class Geratabelas {
         
         System.out.println("tentando remover ");
         removerUsuario(2);
-        System.out.println("feita remoÁao");
+        System.out.println("feita remo√ßao");
         
         System.out.println("confirma1?  "+confirmacaoUsuarioTemLivro(usk));
         
@@ -84,7 +84,7 @@ public class Geratabelas {
         /*
         System.out.println("tentando alterar para emeile@... ");
         alterarEmailUsuario(1, "emeile@blabal");
-        System.out.println("feita alteraÁao");
+        System.out.println("feita altera√ßao");
         
         System.out.println("tentando consulta livro2");
         consultarLivro(2);
@@ -92,7 +92,7 @@ public class Geratabelas {
         */
         System.out.println("tentando remover livro2");
         removerLivro(2);
-        System.out.println("feita remoÁao");
+        System.out.println("feita remo√ßao");
         
         System.out.println("conf 2  "+confirmacaoUsuarioTemLivro(usk));
         /*
@@ -105,7 +105,7 @@ public class Geratabelas {
         
     }
 	
-	/**FUN«’ES**///Teste de criaÁao simples
+	/**FUN√á√ïES**///Teste de cria√ßao simples
 	public static void fazUsuarioTesteqlqr() {
 		System.out.println("iniciou usu a");
 		EntityManager b;
@@ -156,7 +156,7 @@ public class Geratabelas {
 		b.close();
 	}
 	
-	//Teste de criaÁao com parametros
+	//Teste de cria√ßao com parametros
 	public static void persistirEmprestimo(Emprestimo e) {
 		Emprestimo novo = e;
 		System.out.println("iniciou emp e com livro do e");
@@ -196,7 +196,7 @@ public class Geratabelas {
 		System.out.println("fez persist no livro em nova lib");
 	}
 	
-	//OperaÁoes com usuario
+	//Opera√ßoes com usuario
 	public static void consultarUsuario(int numb) {
 		System.out.println("consulta do usuario");
 		EntityManager b;
@@ -310,7 +310,7 @@ public class Geratabelas {
 			System.out.println("fez entity b");
 			b = sb.createEntityManager();
 			Usuario u = b.find(Usuario.class, numb);              
-			System.out.println("encontrado para remoÁao agr-> "+u.getNickname()+" "+u.getEmail()+" "+u.getSenha());
+			System.out.println("encontrado para remo√ßao agr-> "+u.getNickname()+" "+u.getEmail()+" "+u.getSenha());
 			// Remover objeto
 			b.getTransaction().begin();
 			b.remove(u);
@@ -323,7 +323,7 @@ public class Geratabelas {
 		}
 	}
 	
-	//OperaÁoes com livro
+	//Opera√ßoes com livro
 	public static void consultarLivro(int id) {
 		System.out.println("consulta do livro");
 		EntityManager b;
@@ -557,7 +557,7 @@ public class Geratabelas {
 			System.out.println("fez entity b");
 			b = sb.createEntityManager();
 			Livro l = b.find(Livro.class, livro_id);
-			System.out.println("encontrado para remoÁao-> "+l.getNome()+" . "+l.getAutor()+" . "+l.getUsuario());
+			System.out.println("encontrado para remo√ßao-> "+l.getNome()+" . "+l.getAutor()+" . "+l.getUsuario());
 			// Remover objeto
 			b.getTransaction().begin();
 			b.remove(l);
@@ -570,7 +570,7 @@ public class Geratabelas {
 		}
 	}
 	
-	//OperaÁoes com emprestimo
+	//Opera√ßoes com emprestimo
 	public static void consultarEmprestimo() {
 		
 	}
@@ -583,7 +583,7 @@ public class Geratabelas {
 		
 	}
 	
-	//OperaÁoes de confirmaÁ„o
+	//Opera√ßoes de confirma√ß√£o
 	public static boolean confirmacaoUsuarioTemLivro(Usuario usuarioid) {
 		System.out.println("iniciando verificacao");//se usuario ainda tem livro
 		//ou seja se id do usuario esta na tabela livro
@@ -594,11 +594,11 @@ public class Geratabelas {
 		int valid=1;
 		System.out.println("fez variaveis conf");
 		while((li=conf.find(Livro.class, valid)) != null) {
-			System.out.println("comeÁa while");
+			System.out.println("come√ßa while");
 			//quantidade de livros?
 			if(li.getUsuario()!=usuarioid) {
 				System.out.println("dell...");
-				//deleta livro do entity variavel que n„o È do usuario
+				//deleta livro do entity variavel que n√£o √© do usuario
 				conf.remove(li);
 				valid++;
 				
